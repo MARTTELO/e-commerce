@@ -1,3 +1,9 @@
+import Pagina from "@/components/template/Pagina";
+
 export default function Home() {
-  return <div> Inicio</div>
+  return (
+    <Pagina>
+      <div>inicio</div>
+    </Pagina>
+  );
 }
