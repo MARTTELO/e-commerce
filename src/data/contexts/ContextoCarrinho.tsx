@@ -52,6 +52,8 @@ export function ProvedorCarrinho(props: any) {
         set('carrinho', novosItens)
     }
 
+   
+
     return (
         <ContextoCarrinho.Provider
             value={{

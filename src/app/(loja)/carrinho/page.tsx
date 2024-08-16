@@ -8,6 +8,7 @@ import useCarrinho from '@/data/hooks/useCarrinho'
 
 export default function PaginaCarrinho() {
     const { itens, adicionar, remover } = useCarrinho()
+
     return (
         <Pagina className="flex flex-col gap-10">
             {itens.length === 0 ? (
