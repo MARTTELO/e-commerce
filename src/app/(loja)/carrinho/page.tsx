@@ -7,7 +7,7 @@ import Pagina from '@/components/template/Pagina'
 import useCarrinho from '@/data/hooks/useCarrinho'
 
 export default function PaginaCarrinho() {
-    const { itens, adicionar, remover } = useCarrinho()
+    const { itens, adicionar, remover, finalizarCompra } = useCarrinho()
 
     return (
         <Pagina className="flex flex-col gap-10">
@@ -25,7 +25,7 @@ export default function PaginaCarrinho() {
                             />
                         ))}
                     </div>
-                    <TotalCarrinho itens={itens} />
+                    <TotalCarrinho itens={itens} finalizar={() => finalizarCompra()} />
                 </>
             )}
         </Pagina>

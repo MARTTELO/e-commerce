@@ -3,16 +3,11 @@ import Link from 'next/link'
 
 export interface TotalCarrinhoProps {
     itens: ItemCarrinho[]
+    finalizar: ()=> void
 }
 
 export default function TotalCarrinho(props: TotalCarrinhoProps) {
     const total = props.itens.reduce((acc, item) => acc + item.produto.preco * item.quantidade, 0)
-
-    function finalizarCompra(){
-        let listaVazia = props.itens[0].quantidade = 0
-        window.alert('Compra Finalizada')
-        console.log(listaVazia)
-    }
 
     return (
         <div className="flex items-center justify-between bg-zinc-900 rounded-md p-7">
@@ -21,7 +16,7 @@ export default function TotalCarrinho(props: TotalCarrinhoProps) {
                 <span className="text-3xl font-bold text-yellow-500">R$ {total.toFixed(2)}</span>
             </div>
             <Link href="/">
-                <button onClick={finalizarCompra} className="bg-green-600 px-4 py-2 rounded-md text-xl">Finalizar</button>
+                <button onClick={props.finalizar} className="bg-green-600 px-4 py-2 rounded-md text-xl">Finalizar</button>
             </Link>
         </div>
     )
